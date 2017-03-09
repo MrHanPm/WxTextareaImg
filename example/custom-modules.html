@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>来呀～快活呀～……(☆_☆)</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <script src="../dist/wx-textarea-img.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.1.10/vue.js"></script>
+    <style>
+        #app {
+            margin: 50px auto;
+            width: 800px;
+            max-width: 100%;
+            background: #f5f5f5;
+        }
+        .page{min-height: 500px;}
+        .fr-textarea{
+            width: 100%;
+            background: #fff;
+            border: 10px solid #fff;
+            font-size: 14px;
+            overflow-y: scroll;
+            border-radius: 5px;
+            box-sizing:border-box;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <wx-textarea-img :content="content" :imgsurl="imageUrl"></wx-textarea-img>
+    <button type="button" @click="changImageUrl">保存图</button>
+</div>
+
+<script>
+    Vue.use(WxTextareaImg)
+    new Vue({
+        el: "#app",
+        data: {
+            content: "<h3>来呀～快活呀～……(☆_☆)</h3>",
+            imageUrl: ''
+        },
+        methods: {
+            changImageUrl() {
+                console.log(this.imageUrl)
+                this.imageUrl = "http://usr.im/348x230"
+            }
+        }
+    })
+</script>
+</body>
+</html>
