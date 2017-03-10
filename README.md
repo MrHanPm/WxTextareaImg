@@ -27,3 +27,7 @@ wx.chooseImage({
     sourceType: [sour],
     success: function (res) {
         self.imageUrl = res.localIds[0]
+# iOS预览空白问题
+## 在微信会话列表页点击右上角“加号按钮”，选择菜单中的”添加朋友”，在添加朋友界面的搜索框中输入字符串：“:switchweb”，再点击键盘右下角搜索按钮。切换成功后会提示当前使用的内核是UIWebview或是WKWebview
+
+iOS最新的微信，用jsjdk上传图片后，返回的地址显示空白问题。可以通过上面的办法切换后。就可以正常显示了
